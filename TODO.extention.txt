@@ -1,0 +1,5 @@
+solcall end tab
+solsend payble to address
+solsend end tab
+after call return custom error
+function
