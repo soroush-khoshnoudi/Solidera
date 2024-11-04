@@ -1,4 +1,6 @@
-# Solidity Code Rules
+# Auditify Rules 
+
+Here is a list of the rules supported by Auditify. We are trying to increase the number of rules supported by the Auditify, so make sure your package is updated.
 
 ## Style Guide
 
