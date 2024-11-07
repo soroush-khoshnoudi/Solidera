@@ -180,7 +180,7 @@ const checkReentrancy = (functionDefinition, stateVariableNames) => {
                 ) {
                     logMessage(
                         "To avoid reentrancy, do not assign to the state variable after the external call !",
-                        "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/security%20rules/check_reentrancy.md",
+                        "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/security%20rules/check_reentrancy.md",
                         statement.loc,
                         "critical"
                     );
@@ -200,7 +200,7 @@ const useCalldataInsteadMemory = (functionDefinition) => {
             if (!isVariableModified) {
                 logMessage(
                     "Use calldata instead of memory!",
-                    "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/use_calldata_instead_of_memory.md",
+                    "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/use_calldata_instead_of_memory.md",
                     variable.loc,
                     "warning"
                 );
@@ -228,7 +228,7 @@ const specifyStateVariableVisibility = (
         if (variable.visibility === "default") {
             logMessage(
                 "Specify state variable visibility!",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/specify_state_variable_visibility.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/specify_state_variable_visibility.md",
                 variable.loc,
                 "info"
             );
@@ -243,7 +243,7 @@ const specifyFunctionVisibility = (functionDefinition) => {
     ) {
         logMessage(
             "Specify function visibility!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/specify_function_visibility.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/specify_function_visibility.md",
             functionDefinition.loc,
             "info"
         );
@@ -259,7 +259,7 @@ const cacheVariable = (stateVariableNames, functionDefinition) => {
         if (numberOfUsed > 2) {
             logMessage(
                 `To optimize gas consumption, it is suggested to cache your variable "${stateVariableName}" in function "${functionDefinition.name}" .`,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/cache_variable.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/cache_variable.md",
                 functionDefinition.loc,
                 "warning"
             );
@@ -274,7 +274,7 @@ const avoidUseTxOrigin = (memberAccess) => {
     ) {
         logMessage(
             "Avoid using tx.origin!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/security%20rules/avoid_using_tx.origin.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/security%20rules/avoid_using_tx.origin.md",
             memberAccess.loc,
             "critical"
         );
@@ -288,7 +288,7 @@ const avoidUseBlockTimestamp = (memberAccess) => {
     ) {
         logMessage(
             "Avoid using block.timestamp!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/security%20rules/avoid_using_block_timestamp.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/security%20rules/avoid_using_block_timestamp.md",
             memberAccess.loc,
             "warning"
         );
@@ -303,7 +303,7 @@ const checkReturnedValue = (variableDeclarationStatement) => {
     ) {
         logMessage(
             "Capture the return value of external calls!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/security%20rules/check_returned_value.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/security%20rules/check_returned_value.md",
             variableDeclarationStatement.loc,
             "high"
         );
@@ -316,7 +316,7 @@ const useCustomError = (expressionStatement) => {
     if (isRequire) {
         logMessage(
             "recomended use custom error instead of require!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/use_custom_error_instead_of_%60require%60.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/use_custom_error_instead_of_%60require%60.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -360,7 +360,7 @@ const checkReturnValue = (expressionStatement) => {
     if (externalCallExpression || isSendOperation) {
         logMessage(
             "Capture the return value of external calls!",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/security%20rules/check_returned_value.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/security%20rules/check_returned_value.md",
             expressionStatement.expression.loc,
             "high"
         );
@@ -374,7 +374,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use ++ before ${expressionStatement.expression.subExpression.name}. ++${expressionStatement.expression.subExpression.name}`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -385,7 +385,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use -- before ${expressionStatement.expression.subExpression.name}. --${expressionStatement.expression.subExpression.name}`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -396,7 +396,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use "++${expressionStatement.expression.left.name}" instead "${expressionStatement.expression.left.name} += ${expressionStatement.expression.left.name}".`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -407,7 +407,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use "--${expressionStatement.expression.left.name}" instead "${expressionStatement.expression.left.name} -= ${expressionStatement.expression.left.name}".`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -420,7 +420,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use "++${expressionStatement.expression.left.name}" instead "${expressionStatement.expression.left.name} = ${expressionStatement.expression.left.name} + 1".`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -433,7 +433,7 @@ const incAndDecOneOperation = (expressionStatement) => {
     ) {
         logMessage(
             `recommended to use "++${expressionStatement.expression.left.name}" instead "${expressionStatement.expression.left.name} = 1 + ${expressionStatement.expression.left.name}".`,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/increment_and_decrement_by_1_in_one_operation.md",
             expressionStatement.expression.loc,
             "warning"
         );
@@ -455,7 +455,7 @@ const checkBinaryOperation = (binaryOperation) => {
         case ">=":
             logMessage(
                 "recommended to use > instead of >= for save gas.",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
                 binaryOperation.loc,
                 "warning"
             );
@@ -463,21 +463,21 @@ const checkBinaryOperation = (binaryOperation) => {
         case "<=":
             logMessage(
                 "recommended to use < instead of <= for save gas.",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
                 binaryOperation.loc,
                 "warning"
             );
         case "&&":
             logMessage(
                 "note : put the phrase that consumes less gas first.",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
                 binaryOperation.loc,
                 "warning"
             );
         case "||":
             logMessage(
                 "note : put the phrase that consumes less gas first.",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/check_binary_operation.md",
                 binaryOperation.loc,
                 "warning"
             );
@@ -494,14 +494,14 @@ const indexedEvents = (eventDefinition) => {
         ) {
             logMessage(
                 `recommended to make event "${eventDefinition.name}" parameter "${parameter.name}" indexed to reduse gas.`,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
                 parameter.loc,
                 "warning"
             );
         } else if (parameter.typeName.name === "bool" && !parameter.isIndexed) {
             logMessage(
                 `recommended to make event "${eventDefinition.name}" parameter "${parameter.name}" indexed to reduse gas.`,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
                 parameter.loc,
                 "warning"
             );
@@ -511,7 +511,7 @@ const indexedEvents = (eventDefinition) => {
         ) {
             logMessage(
                 `recommended to make event "${eventDefinition.name}" parameter "${parameter.name}" indexed to reduse gas.`,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/indexed_events.md",
                 parameter.loc,
                 "warning"
             );
@@ -529,7 +529,7 @@ const cacheLengthInForStatement = (forStatement) => {
     ) {
         logMessage(
             "recommended to cache length of array in for loop condition to reduce gas .",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/cache_array_length_in_for_loop.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/cache_array_length_in_for_loop.md",
             forStatement.loc,
             "high"
         );
@@ -541,7 +541,7 @@ const namedReturnParameter = (functionDefinition) => {
         if (returnParameter.name === null) {
             logMessage(
                 "use named return to reduse gas",
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/named_return_parameter.md",
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/named_return_parameter.md",
                 returnParameter.loc,
                 "warning"
             );
@@ -553,7 +553,7 @@ const useERC1155 = (inheritanceSpecifier) => {
     if (inheritanceSpecifier.baseName.namePath === "ERC721") {
         logMessage(
             "ERC1155 is a cheaper non-fungible token than ERC721",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/gas%20optimizition%20rules/use_erc-1155_for_batch_operations.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/gas%20optimizition%20rules/use_erc-1155_for_batch_operations.md",
             inheritanceSpecifier.loc,
             "warning"
         );
@@ -623,7 +623,7 @@ const checkLayoutOrder = (childrens) => {
                     expectedOrder[lastIndex]
                 )}.\n\n` +
                 `${chalk.cyan.underline("Learn more:")}\n` +
-                `https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/layout_order.md`;
+                `https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/layout_order.md`;
 
             console.log(
                 boxen(message, {
@@ -682,7 +682,7 @@ const checkContractOrder = (components) => {
                 `Error: ${chalk.red.bold(currentType)} is out of order.\n` +
                 `It should come after ${chalk.yellow.bold(lastType)}.\n\n` +
                 `${chalk.cyan.underline("Learn more:")}\n` +
-                `https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_contract_order.md`;
+                `https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_contract_order.md`;
 
             console.log(
                 boxen(message, {
@@ -747,7 +747,7 @@ const checkFunctionOrder = (functionsArray) => {
             `⚠️ ${chalk.bold("Function Order Error")} ⚠️\n\n` +
             `${chalk.red("Your function order is wrong!")}\n\n` +
             `${chalk.cyan.underline("Learn more:")}\n` +
-            `https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_function_order.md`;
+            `https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_function_order.md`;
 
         console.log(
             boxen(message, {
@@ -789,7 +789,7 @@ const checkStateVariableUnderscorePrefix = (stateVariableDeclaration) => {
     ) {
         logMessage(
             "recommended to use underscore prefix for your private/internal state variables.",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/state-variable-underscore-prefix.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/state-variable-underscore-prefix.md",
             stateVariableDeclaration.variables[0].loc,
             "info"
         );
@@ -799,7 +799,7 @@ const checkStateVariableUnderscorePrefix = (stateVariableDeclaration) => {
     ) {
         logMessage(
             "recommended to use underscore prefix for your private/internal state variables not public or externals.",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/state-variable-underscore-prefix.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/state-variable-underscore-prefix.md",
             stateVariableDeclaration.variables[0].loc,
             "info"
         );
@@ -812,7 +812,7 @@ const checkStateVariableName = (stateVariableDeclaration) => {
             stateVariableDeclaration.variables[0].name,
             stateVariableDeclaration.variables[0].loc,
             CaseType.MIXED_CASE,
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_state_variable_name.md"
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_state_variable_name.md"
         );
     } else {
         checkName(
@@ -832,7 +832,7 @@ const checkFunctionUnderscorePrefix = (functionDefinition) => {
     ) {
         logMessage(
             "recommended to use underscore prefix for your private/internal functions.",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_function_underscore_prefix.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_function_underscore_prefix.md",
             functionDefinition.loc,
             "info"
         );
@@ -842,7 +842,7 @@ const checkFunctionUnderscorePrefix = (functionDefinition) => {
     ) {
         logMessage(
             "recommended to use underscore prefix for your private/internal functions not public/external.",
-            "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_function_underscore_prefix.md",
+            "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_function_underscore_prefix.md",
             functionDefinition.loc,
             "info"
         );
@@ -870,7 +870,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                     functionDefinition.name,
                     functionDefinition.loc,
                     CaseType.MIXED_CASE,
-                    "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_function_name.md"
+                    "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_function_name.md"
                 );
             }
             functionDefinition.parameters.forEach((parameter) => {
@@ -882,7 +882,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                     parameter.name,
                     parameter.loc,
                     CaseType.MIXED_CASE,
-                    "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_function_parameter_name.md"
+                    "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_function_parameter_name.md"
                 );
             });
             namedReturnParameter(functionDefinition);
@@ -903,7 +903,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                     variableDeclarationStatement.variables[0].name,
                     variableDeclarationStatement.variables[0].loc,
                     CaseType.MIXED_CASE,
-                    "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_variable_name.md"
+                    "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_variable_name.md"
                 );
             } else {
                 checkName(
@@ -946,7 +946,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                 contractDefinition.name,
                 contractDefinition.loc,
                 CaseType.CAP_WORD,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_contract_name.md"
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_contract_name.md"
             );
         },
         StructDefinition: (structDefinition) => {
@@ -955,7 +955,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                 structDefinition.name,
                 structDefinition.loc,
                 CaseType.CAP_WORD,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_struct_name.md"
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_struct_name.md"
             );
         },
         EventDefinition: (eventDefinition) => {
@@ -964,7 +964,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                 eventDefinition.name,
                 eventDefinition.loc,
                 CaseType.CAP_WORD,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_event_name.md"
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_event_name.md"
             );
         },
         ModifierDefinition: (modifierDefinition) => {
@@ -973,7 +973,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                 modifierDefinition.name,
                 modifierDefinition.loc,
                 CaseType.MIXED_CASE,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_modifier_name.md"
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_modifier_name.md"
             );
         },
         EnumDefinition: (enumDefinition) => {
@@ -982,7 +982,7 @@ const analyzeSolidityAST = (ast, stateVariableNames) => {
                 enumDefinition.name,
                 enumDefinition.loc,
                 CaseType.CAP_WORD,
-                "https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/style%20guide%20rules/check_enum_name.md"
+                "https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/style%20guide%20rules/check_enum_name.md"
             );
         },
     });

@@ -1,6 +1,6 @@
-# Auditify
+# Solidera
 
-Auditify is an NPM package designed to help developers analyze their Solidity smart contracts for gas optimization, security bugs, and style guide adherence. With a single command, you can receive categorized insights and tips to improve the quality, security, and efficiency of your smart contract code.
+Solidera is an NPM package designed to help developers analyze their Solidity smart contracts for gas optimization, security bugs, and style guide adherence. With a single command, you can receive categorized insights and tips to improve the quality, security, and efficiency of your smart contract code.
 
 ## Features
 
@@ -10,10 +10,10 @@ Auditify is an NPM package designed to help developers analyze their Solidity sm
 
 ## Installation
 
-To install Auditify, run:
+To install Solidera, run:
 
 ```bash
-npm install -g auditify
+npm install -g solidera
 ```
 
 ## Usage
@@ -21,14 +21,14 @@ npm install -g auditify
 After installing, you can analyze your contract by running the following command:
 
 ```bash
-auditify path/to/your/contract.sol
+solidera path/to/your/contract.sol
 ```
 
 Replace `path/to/your/contract.sol` with the path to the Solidity file you want to audit.
 
 ## Report
 
-Auditify will analyze your contract and categorize findings into three main areas:
+Solidera will analyze your contract and categorize findings into three main areas:
 
 1. **Gas Optimization**
 2. **Security Bugs**
@@ -38,12 +38,12 @@ Each issue found will include a description, allowing you to quickly understand 
 
 ## Rules
 
-For a detailed explanation of the rules applied in each category, please refer to the [Auditify Rules Documentation](https://github.com/soroush-khoshnoudi/Auditify/blob/main/docs/rules.md).
+For a detailed explanation of the rules applied in each category, please refer to the [Solidera Rules Documentation](https://github.com/soroush-khoshnoudi/Solidera/blob/main/docs/rules.md).
 
 ## Example
 
 ```bash
-auditify contracts/MyContract.sol
+solidera contracts/MyContract.sol
 ```
 
 Example output:

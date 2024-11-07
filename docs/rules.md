@@ -1,6 +1,6 @@
-# Auditify Rules 
+# Solidera Rules 
 
-Here is a list of the rules supported by Auditify. We are trying to increase the number of rules supported by the Auditify, so make sure your package is updated.
+Here is a list of the rules supported by Solidera. We are trying to increase the number of rules supported by the Solidera, so make sure your package is updated.
 
 ## Style Guide
 

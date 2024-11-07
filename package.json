@@ -1,6 +1,6 @@
 {
-    "name": "auditify",
-    "version": "1.0.0",
+    "name": "solidera",
+    "version": "0.1.0",
     "main": "index.js",
     "type": "module",
     "scripts": {
@@ -9,11 +9,32 @@
     "bin": "./bin/index.js",
     "author": "Soroush Khoshnoudi",
     "license": "ISC",
-    "description": "",
+    "description": "Solidera is a smart contract security toolkit that analyzes Solidity code for security vulnerabilities, gas optimization, and style compliance. ",
     "dependencies": {
         "@solidity-parser/parser": "^0.18.0",
         "boxen": "^8.0.1",
         "chalk": "^5.3.0",
-        "commander": "^12.1.0"
-    }
+        "commander": "^12.1.0",
+        "solidera": "^0.1.0"
+    },
+    "keywords": [
+        "Solidera",
+        "smart contracts",
+        "Solidity",
+        "security",
+        "gas optimization",
+        "style guide",
+        "vulnerability",
+        "audit",
+        "Ethereum",
+        "blockchain",
+        "static analysis",
+        "code analysis",
+        "smart contract audit",
+        "code optimization",
+        "solidity security",
+        "smart contract tool",
+        "gas efficiency",
+        "smart contract security"
+    ]
 }
